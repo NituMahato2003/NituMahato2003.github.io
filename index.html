@@ -42,11 +42,9 @@
 			(e.keyCode === 13 ? addList(e) : null);
 		})
 
-        // Load tasks from localStorage
         const savedNotCompletedTasks = JSON.parse(localStorage.getItem('notCompletedTasks')) || [];
         const savedCompletedTasks = JSON.parse(localStorage.getItem('completedTasks')) || [];
 
-        // Populate tasks on page load
         savedNotCompletedTasks.forEach(task => appendTask(task, notCompletedList));
         savedCompletedTasks.forEach(task => appendTask(task, completedList, true));
 
